@@ -1,0 +1,25 @@
+.img2 {
+  width: 100%;
+  height: 280rpx;
+}
+.img2-list {
+  width: 710rpx;
+  margin: 0 auto;
+  padding-bottom: 30rpx;
+}
+.np{
+ display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.img2-list .dd {
+  width: 344rpx;
+  margin-top: 20rpx;
+  border: 1px solid #f2f2f2;
+}
+
+.img2-list .div {
+  width: 100%;
+  padding: 15rpx;
+}

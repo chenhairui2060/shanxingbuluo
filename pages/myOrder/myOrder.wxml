@@ -1,0 +1,41 @@
+<!-- 详情说明 -->
+<view class='hddeta-tabShow bt15'>
+  <view class='hddeta-tab flex-bect h66 tc paddLR bt15'>
+    <view class='dd {{radioOn==index?"on":""}}' bindtap='radio' wx:for="{{radioList}}" wx:key="" data-index='{{index}}'>{{item}}</view>
+  </view>
+  <!-- <view class='hddeta-show flex-bect paddLR padd30 bt1 LH18'>
+    <view wx:if='{{radioOn==index}}' class='dd' wx:for="{{radioListShow}}" wx:key="">{{item}}</view>
+  </view> -->
+</view>
+
+
+<!-- 项目列表 -->
+<view class='img-list clearfix LH16' wx:if="{{activitylist.length!=0}}">
+  <block wx:for="{{activitylist}}" wx:key="*this">
+    <view class='dd bt15'>
+      <view class='flex-bect type paddLR'>
+        <text>{{item.typetitle}}</text>
+        <text class='red1' wx:if="{{item.status==1}}">未支付</text>
+        <text class='red1' wx:if="{{item.status==2}}">已付款</text>
+        <text class='red1' wx:if="{{item.status==3}}">退款中</text>
+        <text class='red1' wx:if="{{item.status==4}}">已退款</text>
+        <text class='red1' wx:if="{{item.status==5}}">已完成</text>
+      </view>
+      <view class='flex-bect bt1 li paddLR'>
+        <image class='mri20 img1' src='{{item.thumbimage}}'></image>
+        <view class='mlW flex1'>
+          <view class='np font30'>{{item.title}}</view>
+          <view class='h66 LH18'>时间：{{item.starttime}}-{{item.endtime}}
+            <view>报名：23</view>
+          </view>
+        </view>
+      </view>
+      <view class='flex-rict paddLR' wx:if="{{item.status==2}}">
+        <view class='btn rd8 flex-ct' data-idx='{{index}}' data-orderid='{{item.id}}' bindtap='cancel'>取消报名</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='img-list clearfix LH16 no-tip' wx:else>
+  暂无此类订单 
+</view>

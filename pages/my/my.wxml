@@ -1,0 +1,38 @@
+<view class='topLine'></view>
+<!-- 顶部俱乐部信息 -->
+<view class='bgff'>
+  <view class='paddLR bt15 logo-dd flex-bect'>
+    <image class='logo-img mri20' src='{{userInfo.head_image}}'></image>
+    <view class='flex1 mlW'>
+      <view class='font36'>{{userInfo.nickname}}</view>
+      <view class='h66 np'></view>
+      <view class='flex-lect h66'><image src='../img/ico-card.png' class='ico35 mri10'></image>
+        <text class='mri30'>ID:{{userInfo.uid}}</text><text>积分：{{userInfo.integral?userInfo.integral:0}}</text>
+      </view>
+    </view>
+  </view>
+  <navigator url='/pages/fileList/fileList' class='dd paddLR H100 flex-bect font30 bt1' hover-class="none">
+    <view class='flex-lect'><image class='ico35 mri20' src='../img/ico-my1.png'></image><text>资料卡</text></view>
+    <image class='ico20' src='../img/ico-ri.png'></image>
+  </navigator>
+  <navigator url='/pages/myjf/myjf' class='dd paddLR H100 flex-bect font30 bt15' hover-class="none">
+    <view class='flex-lect'><image class='ico35 mri20' src='../img/ico-my2.png'></image><text>我的积分</text></view>
+    <image class='ico20' src='../img/ico-ri.png'></image>
+  </navigator>
+
+  <navigator url='/pages/myOrder/myOrder' class='dd paddLR H100 flex-bect font30 bt1' hover-class="none">
+    <view class='flex-lect'><image class='ico35 mri20' src='../img/ico-my3.png'></image><text>我的订单</text></view>
+    <image class='ico20' src='../img/ico-ri.png'></image>
+  </navigator>
+  <navigator url='/pages/myDuih/myDuih' class='dd paddLR H100 flex-bect font30 bt15' hover-class="none">
+    <view class='flex-lect'><image class='ico35 mri20' src='../img/ico-my4.png'></image><text>我的兑换</text></view>
+    <image class='ico20' src='../img/ico-ri.png'></image>
+  </navigator>
+
+  <navigator url='/pages/about/about?pathname=about&noticeid=-1' class='dd paddLR H100 flex-bect font30 bt1' hover-class="none">
+    <view class='flex-lect'><image class='ico35 mri20' src='../img/ico-my5.png'></image><text>关于我们</text></view>
+    <image class='ico20' src='../img/ico-ri.png'></image>
+  </navigator>
+</view>
+<!-- 底部 -->
+<include src="../../pages/foot/foot.wxml" />

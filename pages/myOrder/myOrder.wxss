@@ -1,0 +1,10 @@
+.hddeta-tab .dd{padding:0 15rpx;height:80rpx;display:flex;align-items:center;justify-content:center;border-bottom:4rpx solid transparent}
+.hddeta-tab .dd.on{border-bottom-color:#FFA000}
+
+
+.img-list .dd{padding:0;padding-top:25rpx;}
+.img-list .btn{border:1px solid #ededed;width:150rpx;height:55rpx;margin:20rpx 0;}
+.img-list .li{padding:25rpx 0;}
+.flex-ct:active{
+  opacity: .8;
+}

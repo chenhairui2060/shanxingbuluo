@@ -1,0 +1,13 @@
+page{background-color:#f2f2f2}
+.dt{margin-right:20rpx;}
+.delet-dtn{width:150rpx;height:55rpx;border:1px solid #ddd;}
+
+
+
+.haveFt{height:115rpx;}
+.haveFt.haveH{height:130rpx;}
+.bt-fixed.haveH{padding-bottom:20rpx;}
+.bt-fixed{position:fixed;left:0;bottom:0;width:100%;z-index:999;}
+.bt-fixed:active{
+  opacity: .8;
+}

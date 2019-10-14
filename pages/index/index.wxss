@@ -1,0 +1,4 @@
+.top-news{height:100rpx;}
+swiper{height:60rpx;width:80%}
+swiper .flex-ct{height:60rpx;justify-content:flex-start}
+.line{width:3rpx;height:40rpx;background-color:#F2F2F2}

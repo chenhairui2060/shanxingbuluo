@@ -1,0 +1,40 @@
+/* pages/homepage/homepage.wxss */
+page{
+  background: #fff;
+}
+.header {
+    margin: 0rpx 0 90rpx 50rpx;
+    border-bottom: 1px solid #f5f7fa;
+    text-align: center;
+    width: 650rpx;
+    height: 465rpx;
+}
+.header image{
+  height:458rpx;
+  width: 458rpx;
+}
+ 
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+    font-size: 28rpx;
+    text-indent: 32rpx;
+}
+ 
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top:24rpx;
+}
+ 
+.bottom {
+    width: 500rpx;
+    border-radius: 80rpx;
+    margin: 0 auto;
+    font-size: 32rpx;
+    background: #FFA000;
+    color: #fff;
+}
+.bottom:active{
+  opacity: .8;
+}

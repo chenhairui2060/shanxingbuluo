@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/shopdeta/shopdeta",
+    "pages/about/about",
+    "pages/myDuih/myDuih",
+    "pages/comOrder/comOrder",
+    "pages/hddeta/hddeta",
+    "pages/myOrder/myOrder",
+    "pages/my/my",
+    "pages/fileList/fileList",
+    "pages/baomxinx/baomxinx",
+    "pages/edit/edit",
+    "pages/myjf/myjf",
+    "pages/baom/baom",
+    "pages/homepage/homepage",
+    "pages/foot/foot",
+    "pages/navIndex/navIndex"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "弘翔乒乓",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxc17d20f5b4595397",
+    "wx075e9719751f9d81"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,19 @@
+<view class='jf-top bg1 paddLR flex-hct'>
+  <view>
+    <view class='font24'>当前积分</view>
+    <view class='font72'>{{userInfo.integral}}</view>
+  </view>
+</view>
+<view class='bgf2 flex-ct H80 h99'>—— 积分明细 ——</view>
+<view class='jf-list clearfix'>
+  <block wx:for="{{integral}}" wx:key="*this">
+    <view class='dd'>
+      <view>
+        <text class='red1'>【活动】</text>{{item.title}}
+        <view class='h66 font24'>{{item.createtime}}</view>
+      </view>
+      <view class='red2' wx:if="{{item.type==1}}">+{{item.integral}}</view>
+      <view  wx:else>-{{item.integral}}</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,21 @@
+<swiper class='bt15 banner' indicator-dots="true" indicator-color="rgba(112,112,112,0.5)" indicator-active-color="#FFA000" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{topData}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="ban"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 项目列表 -->
+<view class='img2-list  hh' style='justify-content: space-between;  display: flex;'>
+  <block wx:for="{{activitylist}}" wx:key="*this">
+    <view class='dd rd8' data-goodsid='{{item.id}}' bindtap='navtoshopdeta'>
+      <image class='img2' src='{{item.thumbimage}}'></image>
+      <view class='div'>
+        <view class='np h66'>{{item.name}}</view>
+        <view class='red2'>{{item.scoreprice}}积分</view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 底部 -->
+<include src="../../pages/foot/foot.wxml" />

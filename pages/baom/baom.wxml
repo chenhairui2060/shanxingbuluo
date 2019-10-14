@@ -1,0 +1,148 @@
+<view class='topLine'>
+</view>
+<form bindsubmit="formSubmit">
+  <!-- 报名资料卡 -->
+  <view class='ziliaok bgff'>
+    <view class='flex-bect paddLR padd30' bindtap='navtofileList'>
+      <view>报名资料卡</view>
+      <image class='ico20' src='../img/ico-ri.png'></image>
+    </view>
+    <view class='name clearfix flex-lect hh tc paddLR'>
+      <view class='dd rd8 flex-ct {{item.checked?"on":""}}' data-index="{{index}}" data-dataitem="{{item}}" bindtap='checkbox' wx:for='{{nameCheck}}' wx:key=''>{{item.wxname}}</view>
+    </view>
+  </view>
+  <view class='baomr-deta bt15 bgff'>
+    <view class='dd' wx:for='{{nameData}}' wx:key="item" data-index='{{index}}' bindtap='cardClick' data-id="{{keyOn}}">
+      <view class='baon-name bgf2 paddLR flex-hct H100'>{{item.wxname}}</view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>微信名 {{item.ispreader_bed}}</view>
+        <input class='flex1 w2 H100 flex-hct tr' value='{{item.wxname}}' data-index='{{index}}' data-name='wxname' bindinput="reviseData" placeholder='请填写'></input>
+      </view>
+
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>真实姓名</view>
+        <input class='flex1 w2 H100 flex-hct tr' value='{{item.truename}}' data-index='{{index}}' data-name='truename' bindinput="reviseData" placeholder='请填写真实姓名'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>身份证号</view>
+        <input class='flex1 w2 H100 flex-hct tr' maxlength='18' bindinput='{{keyOn==index?"cardKey":""}}' data-index="{{index}}" value='{{item.idcard}}' data-name='idcard' placeholder='请填写正确身份证号'></input>
+      </view>
+
+      <view class='li flex-bect paddLR bt1' wx:if='{{item.adult_children==1}}'>
+        <view class='w1'>成人票</view>
+        <view class='flex-rict H100'>
+          <view bindtap='{{keyOn==index?"piaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='1' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>拼房</text>
+          </view>
+          <view bindtap='{{keyOn==index?"piaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='2' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>不拼房</text>
+          </view>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1' wx:if='{{item.adult_children==2}}'>
+        <view class='w1'>儿童票</view>
+        <view class='flex-rict H100'>
+          <view bindtap='{{keyOn==index?"piaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='1' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>有床</text>
+          </view>
+          <view bindtap='{{keyOn==index?"piaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='2' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>无床</text>
+          </view>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' value='{{item.phone}}' bindinput="reviseData" data-name='phone' placeholder='请输入手机号'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>紧急联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' value='{{item.emergencyphone}}' bindinput="reviseData" data-name='emergencyphone' placeholder='请输入紧急联系方式'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>上车地点 {{item.id}}</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' value='{{item.boarding_location}}' bindinput="reviseData" data-name='boarding_location' placeholder='请输入上车地点'></input>
+      </view>
+      <view class='li flex-lect paddLR bt1 H100' data-idx='{{index}}' data-id='{{item.id}}' bindtap='baomrtype'>
+        <image class='ico30 mri15' src='{{item.type==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+        <text>保存为资料卡</text>
+      </view>
+    </view>
+    <view class='dd' wx:for='{{bnameData}}' wx:key="item" data-index='{{index}}' data-id="{{xzkeyOn}}" bindtap='xzcardClick'>
+      <view class='baon-name bgf2 paddLR flex-hct H100'>帮报名人{{index}}</view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>微信名</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='wxname' placeholder='请填写' bindinput="addData"></input>
+      </view>
+
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>真实姓名</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='truename' bindinput="addData" placeholder='请填写真实姓名'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>身份证号</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='idcard' bindinput='{{xzkeyOn==index?"xzcardKey":""}}' placeholder='请填写正确身份证号'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1' wx:if="{{item.adult_children==1}}">
+        <view class='w1'>成人票</view>
+        <view class='flex-rict H100'>
+          <view class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='../img/ico-checkon.png'></image>
+            <text>拼房</text>
+          </view>
+          <view class='dt flex-lect'>
+            <image class='ico30 mri10' src='../img/ico-check.png'></image>
+            <text>不拼房</text>
+          </view>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1' wx:if='{{item.adult_children==2}}'>
+        <view class='w1'>儿童票</view>
+        <view class='flex-rict H100'>
+          <view bindtap='{{xzkeyOn==index?"xzpiaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='1' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>有床</text>
+          </view>
+          <view bindtap='{{xzkeyOn==index?"xzpiaoType":""}}' data-type='{{item.type}}' data-ispreader_bed='2' data-index='{{index}}' class='dt flex-lect mri20'>
+            <image class='ico30 mri10' src='{{item.ispreader_bed==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>无床</text>
+          </view>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='phone' bindinput="addData" placeholder='请输入手机号'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>紧急联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='emergencyphone' bindinput="addData" placeholder='请输入紧急联系方式'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>上车地点</view>
+        <input class='flex1 w2 H100 flex-hct tr' data-index='{{index}}' data-name='boarding_location' bindinput="addData" placeholder='请输入上车地点'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1 H100'>
+        <view class='flex-lect' data-idx='{{index}}' bindtap='baoxzmrtype'>
+          <image class='ico30 mri15' src='{{item.type==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+          <text>保存为资料卡</text>
+        </view>
+        <view class='banbtn flex-ct rd8' bindtap='delete' data-index='{{index}}'>删除报名</view>
+      </view>
+    </view>
+  </view>
+  <view class='red1 font36 flex-ct H100 bgff' data-index='{{bIndex}}' bindtap='bbaom'>
+    <image src='../img/ico-add.png' class='ico35 mri10'></image>
+    <text>新增报名</text>
+  </view>
+  <view class='haveFt {{isIpx?"haveH":""}}'></view>
+    <view class='bt-fixed bg1 {{isIpx?"haveH":""}}'>
+      <view class='bg4 H80 flex-ct'>
+        <text class='h66'>确定报名即为同意</text>
+        <text class='red3'>《山行部落报名协议》</text>
+      </view>
+      <button form-type="submit" class='font36 bg1 flex-ct H100'>确定报名</button>
+    </view>
+</form>

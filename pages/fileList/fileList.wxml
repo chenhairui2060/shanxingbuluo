@@ -1,0 +1,29 @@
+<!-- 报名资料卡 -->
+<view class='bgff'>
+  <view class='bt15'></view>
+  <view class='red1 font36 flex-ct H100 bgff bt15' bindtap='navtobaomxinx'>
+    <image src='../img/ico-add.png' class='ico35 mri10'></image>
+    <text>添加</text>
+  </view>
+
+  <view class='list'>
+    <block wx:for="{{nameCheck}}" wx:key="*this">
+      <view class='paddLR flex-be dd padd30 bt1'>
+        <image src='{{item.checked?"../img/ico-checkon.png":"../img/ico-check.png"}}' data-index='{{index}}' bindtap='checkbox' class='ico35 mri40'></image>
+        <view class='flex-bect flex1'>
+          <view class='w02'>
+            <view>{{item.truename}}</view>
+            <view class='num'>{{item.idcard}}</view>
+          </view>
+          <image src='../img/ico-edit.png' class='ico35' data-cardid='{{item.id}}' bindtap='edit'></image>
+          <image src='../img/ico-delet.png' class='ico35' data-idx='{{index}}' data-cardid='{{item.id}}' bindtap='delcard'></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- <view class='haveFt {{isIpx?"haveH":""}}'></view>
+<view class='bt-fixed bg1 {{isIpx?"haveH":""}}'>
+  <view class='font36 bg1 flex-ct H100'>确定</view>
+</view> -->

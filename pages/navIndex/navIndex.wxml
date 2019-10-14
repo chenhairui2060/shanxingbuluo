@@ -1,0 +1,30 @@
+<swiper class='bt15 banner'  indicator-dots="true" indicator-color="rgba(112,112,112,0.5)" indicator-active-color="#FFA000" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{imgUrls}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="ban"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 项目列表 -->
+<view class='img-list clearfix LH16' wx:if="{{activitylist.length!=0}}">
+  <block wx:for="{{activitylist}}" wx:key="*this">
+    <navigator url='/pages/hddeta/hddeta?activeid={{item.id}}' class='dd bt1 paddLR flex-bect'>
+      <image class='mri20 img1' src='{{item.thumbimage}}'></image>
+      <view class='mlW flex1'>
+        <view class='np font30'>{{item.title}}</view>
+        <view class='flex-bect h66 LH18'>
+          <view class=''>时间：{{item.starttime}}-{{item.endtime}}
+            <view>报名：{{item.alreadynum}}</view>
+          </view>
+          <view class='red2'>￥
+            <text class='font36'>{{item.atprice}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>
+<view class='img-list clearfix LH16 no-tip' wx:else>
+  暂无内容 
+</view>
+

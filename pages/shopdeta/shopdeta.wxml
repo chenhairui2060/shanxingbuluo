@@ -1,0 +1,59 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<swiper class='bt15 banner' indicator-dots="true" indicator-color="rgba(112,112,112,0.5)" indicator-active-color="#FFA000" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{goodsdetail.pics}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="ban"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='paddLR font36 padd30 bt15 LH16'>
+  <view>{{goodsdetail.name}}</view>
+  <view class='red2 price'>{{goodsdetail.scoreprice}} 积分</view>
+  <view class='font28 h99'>市场参考价：￥{{goodsdetail.mrp}}</view>
+</view>
+<view class='paddLR padd30 flex-Hct bt15' >配送方式：自提/顺带</view>
+
+<!-- 商品描述 -->
+<view class='paddLR padd30 flex-Hct bt1'>商品描述</view>
+<view class='LH16 paddLR padd30'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+
+<view class='haveFt {{isIpx?"haveH":""}}'></view>
+<view class='submit {{isIpx?"haveH":""}} font36' bindtap='pupShow'>确认兑换</view>
+
+<!-- 弹窗 -->
+<form bindsubmit="exchangeyes">
+  <view class='pup' wx:if="{{pupShow}}" id='peis_pup'>
+    <view class=' pup-box pup-middle'>
+      <view class='bgff rd8'>
+        <view class='flex-bect click-box'>
+          <view class='flex-lect dd' data-type='1' bindtap='chooseType'>
+            <image class='ico35 mri10' src='{{type==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>顺带</text>
+          </view>
+          <view class='flex-lect dd' data-type='2' bindtap='chooseType'>
+            <image class='ico35 mri10' src='{{type==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>自提</text>
+          </view>
+        </view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2050-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            <input class='rd8 text H80' placeholder='{{type==1?"请输入下次活动时间":"请输入自提时间"}}' disabled='true' value='{{date}}'></input>
+          </view>
+        </picker>
+        <textarea class='rd8 text' placeholder='请输入您的备注信息，若无可不填' name="remark"></textarea>
+        <button  class='H80 rd8 bg1 pup-submit flex-ct' form-type="submit"> 提交</button >
+        <view class='font24 h66 LH18'>
+          <view>温馨提示：{{type==1?"下次活动可跟团带":"需要来公司自提"}}</view>
+          <view>联系电话：{{proninfo.phone}}</view>
+          <view>公司地址：{{proninfo.area}}</view>
+        </view>
+      </view>
+      <view class='tc'>
+        <image class='ico60 ico-close' src='../img/ico-close2.png' bindtap='pupClose'></image>
+      </view>
+    </view>
+    <view class='pup-bg' bindtap='pupClose'></view>
+  </view>
+</form>

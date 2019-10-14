@@ -1,0 +1,8 @@
+.hddeta-tab .dd{padding:0 15rpx;height:80rpx;display:flex;align-items:center;justify-content:center;border-bottom:4rpx solid transparent}
+.hddeta-tab .dd.on{border-bottom-color:#FFA000}
+
+.wx-img{width:350rpx;height:350rpx;box-sizing:unset;padding:15rpx;border:1px solid #ededed;margin:30rpx 0}
+.ico-close{position:absolute;right:20rpx;top:20rpx;}
+.submit:active{
+  opacity: .8;
+}

@@ -1,0 +1,58 @@
+<view class='topLine'></view>
+
+<!-- 顶部俱乐部信息 -->
+<view class='paddLR bt1 logo-dd flex-bect'>
+  <image class='logo-img mri20' src='{{topData.Tribeimg}}'></image>
+  <view class='flex1 mlW'>
+    <view class='font36'>{{topData.Tribename}}</view>
+    <view class='h66 np'>{{!topData.autograph?"暂无部落名称":topData.autograph}}</view>
+    <view class='flex-lect h66'>
+      <image src='../img/ico-card.png' class='ico35 mri10'></image>
+      <text class='mri30'>ID:{{topData.uid}}</text>
+      <text>积分：{{topData.integral?topData.integral:0}}</text>
+    </view>
+  </view>
+</view>
+<!-- 公告 -->
+<view class='top-news clearfix flex-bect bt15'>
+  <image class='ico35' src='../img/ico-gg.png'></image>
+  <view class='line'></view>
+  <swiper indicator-dots="true" vertical='true' indicator-color="transparent" indicator-active-color="transparent" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{newsBan}}" wx:key="item">
+      <swiper-item>
+        <view class="h66 flex-ct" data-noticeid='{{item.id}}'  bindtap='navouturl'>{{item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class='ico20' src='../img/ico-ri.png'></image>
+</view>
+<!-- 小导航 -->
+<view class='nav1-list bt15 clearfix flex-bect font26'>
+  <block wx:for="{{homeNavList}}" wx:key="*this">
+    <navigator url='/pages/navIndex/navIndex?typeid={{item.id}}&title={{item.title}}' class='dd padd30' hover-class="none">
+      <image src='{{item.image}}' class='ico90'></image>
+      <view>{{item.title}}</view>
+    </navigator>
+  </block>
+</view>
+<!-- 项目列表 -->
+<view class='img-list clearfix LH16'>
+  <block wx:for="{{activitylist}}" wx:key="*this">
+    <navigator url='/pages/hddeta/hddeta?activeid={{item.id}}' class='dd bt1 paddLR flex-bect' hover-class="none">
+      <image class='mri20 img1' src='{{item.thumbimage}}'></image>
+      <view class='mlW flex1'>
+        <view class='np font30'>{{item.title}}</view>
+        <view class='flex-bect h66 LH18'>
+          <view class=''>时间：{{item.starttime}}-{{item.endtime}}
+            <view>报名：{{item.alreadynum}}</view>
+          </view>
+          <view class='red2'>￥
+            <text class='font36'>{{item.atprice}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>
+<!-- 底部 -->
+<include src="../../pages/foot/foot.wxml" />

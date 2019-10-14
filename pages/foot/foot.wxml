@@ -1,0 +1,23 @@
+<!--pages/templates/foot.wxml-->
+<view class='haveFt {{isIpx?"haveH":""}}'></view>
+<view id='footer' class='clearfix flex-bect tc h88 {{isIpx?"footpaddBt":""}}'>
+  <navigator url='/pages/index/index' hover-class="none" open-type="redirect" class='dd {{footOn==1?"red1":""}}'>
+    <image src='../img/ico-ft1{{footOn==1?"on":""}}.png' class='ico45'></image>
+    <view>首页</view>
+  </navigator>
+
+  <navigator url='/pages/shop/shop' class='dd {{footOn==2?"red1":""}}' open-type="redirect" hover-class="none">
+    <image src='../img/ico-ft2{{footOn==2?"on":""}}.png' class='ico45'></image>
+    <view>积分兑换</view>
+  </navigator>
+
+  <navigator path='/pages/index/index' app-id="{{appId}}" envVersion="release" class='dd {{footOn==3?"red1":""}}' target="miniProgram" hover-class="none">
+    <image src='../img/ico-ft3{{footOn==3?"on":""}}.png' class='ico45'></image>
+    <view>周边商城</view>
+  </navigator>
+
+  <navigator url='/pages/my/my' class='dd {{footOn==4?"red1":""}}' open-type="redirect" hover-class="none">
+    <image src='../img/ico-ft4{{footOn==4?"on":""}}.png' class='ico45'></image>
+    <view>我的</view>
+  </navigator>
+</view>

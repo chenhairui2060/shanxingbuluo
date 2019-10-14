@@ -1,0 +1,54 @@
+<view class='topLine'></view>
+<form bindsubmit="formSubmit">
+  <view class='baomr-deta bt15 bgff'>
+    <view class='dd'>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>微信名</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="wxname" placeholder='请填写'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>真实姓名</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="truename" placeholder='请填写真实姓名'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>身份证号</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="idcard" bindinput="cardKey" placeholder='请填写正确身份证号'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1' wx:if="{{adult_children!=0}}">
+        <view class='w1'>{{adult_children==1?"成人票":"儿童票"}}</view>
+        <view class='flex-rict H100' wx:if="{{adult_children==1}}">
+          <block wx:for="{{piaoType}}" wx:key="*this">
+            <view class='dt flex-lect' data-idx='{{index}}' bindtap='piaoType'>
+              <image class='ico30 mri15' src='{{current==index?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+              <text wx:if="{{index==0}}">拼房</text>
+              <text wx:if="{{index==1}}">不拼房</text>
+            </view>
+          </block>
+        </view>
+        <view class='flex-rict H100' wx:else>
+          <block wx:for="{{piaoType}}" wx:key="*this">
+            <view class='dt flex-lect' data-idx='{{index}}' bindtap='piaoType'>
+              <image class='ico30 mri15' src='{{current==index?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+              <text wx:if="{{index==0}}">有床</text>
+              <text wx:if="{{index==1}}">无床</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="phone" placeholder='请输入手机号'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>紧急联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="emergencyphone" placeholder='请输入紧急联系方式'></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>上车地点</view>
+        <input class='flex1 w2 H100 flex-hct tr' name="boarding_location" placeholder='请输入上车地点'></input>
+      </view>
+    </view>
+  </view>
+  <view class='haveFt {{isIpx?"haveH":""}}'></view>
+  <button class='bt-fixed bg1 flex-ct H100 font36 {{isIpx?"haveH":""}}' form-type="submit">保存</button>
+</form>

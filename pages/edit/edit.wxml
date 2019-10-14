@@ -1,0 +1,59 @@
+<view class='topLine'></view>
+<form bindsubmit="formSubmit">
+  <view class='baomr-deta bt15 bgff'>
+    <view class='dd'>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>微信名</view>
+        <input class='flex1 w2 H100 flex-hct tr' placeholder='请填写' value='{{userInfo.wxname}}' name="wxname"></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>真实姓名</view>
+        <input class='flex1 w2 H100 flex-hct tr' placeholder='请填写真实姓名' value='{{userInfo.truename}}' name="truename"></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>身份证号</view>
+        <input class='flex1 w2 H100 flex-hct tr' bindinput="cardKey" placeholder='请填写正确身份证号' value='{{userInfo.idcard}}' name="idcard"></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>{{userInfo.adult_children==1?"成人票":"儿童票"}}</view>
+        <view class='flex-rict H100' wx:if="{{userInfo.adult_children==1}}">
+          <view class='dt flex-lect' data-ispreader_bed='1' bindtap='piaoType'>
+            <image class='ico30 mri15' src='{{userInfo.ispreader_bed==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>拼房</text>
+          </view>
+           <view class='dt flex-lect' data-ispreader_bed='2' bindtap='piaoType'>
+            <image class='ico30 mri15' src='{{userInfo.ispreader_bed==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>不拼房 </text>
+          </view>
+        </view>
+        <view class='flex-rict H100' wx:else>
+          <view class='dt flex-lect' data-ispreader_bed='1' bindtap='piaoType'>
+            <image class='ico30 mri15' src='{{userInfo.ispreader_bed==1?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>有床</text>
+          </view>
+          <view class='dt flex-lect' data-ispreader_bed='2' bindtap='piaoType'>
+            <image class='ico30 mri15' src='{{userInfo.ispreader_bed==2?"../img/ico-checkon.png":"../img/ico-check.png"}}'></image>
+            <text>无床</text>
+          </view>
+        </view>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' placeholder='请输入手机号' value='{{userInfo.phone}}' name="phone"></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>紧急联系方式</view>
+        <input class='flex1 w2 H100 flex-hct tr' placeholder='请输入紧急联系方式' value='{{userInfo.emergencyphone}}' name="emergencyphone"></input>
+      </view>
+      <view class='li flex-bect paddLR bt1'>
+        <view class='w1'>上车地点</view>
+        <input class='flex1 w2 H100 flex-hct tr' placeholder='请输入上车地点' value='{{userInfo.boarding_location}}' name="boarding_location"></input>
+      </view>
+      <view class='flex-rict padd30 paddLR'>
+        <text class='rd8 flex-ct delet-dtn'>删除</text>
+      </view>
+    </view>
+  </view>
+  <view class='haveFt {{isIpx?"haveH":""}}'></view>
+  <button class='bt-fixed bg1 flex-ct H100 font36 {{isIpx?"haveH":""}}' form-type="submit">确认修改</button>
+</form>

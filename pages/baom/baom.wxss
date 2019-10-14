@@ -1,0 +1,12 @@
+page{background-color:#f2f2f2}
+.name .dd{width:23%;margin:0 2.66666% 20rpx 0;border:1px solid #ededed;height:70rpx;}
+.name .dd:nth-child(4n+4){margin-right:0}
+.name .dd.on{color:#FFA000;border:1px solid #FFA000;background-color:#FFFAF1}
+
+.baomr-deta .w1{margin-right:20rpx;}
+
+.haveFt{height:195rpx;}
+.haveFt.haveH{height:215rpx;}
+.bt-fixed.haveH{padding-bottom:20rpx;}
+.bt-fixed{position:fixed;left:0;bottom:0;width:100%;z-index:999}
+.banbtn{width:150rpx;height:55rpx;border:1px solid #ededed}

@@ -1,0 +1,11 @@
+@import"../../utils/wxParse/wxParse.wxss";
+.price{margin:10rpx 0;}
+.submit{position:fixed;width:100%;left:0;bottom:0;z-index:999;}
+.submit.haveH{padding-bottom:20rpx;box-sizing:unset; }
+
+#peis_pup .pup-box{padding:0px;width:670rpx;}
+#peis_pup .bgff{padding:50rpx 40rpx;margin-bottom:60rpx;}
+textarea{height:280rpx;padding:15rpx !important;}
+.text{border:1px solid #ededed;margin-top:20rpx;padding:0 15rpx;}
+.pup-submit{width:200rpx;margin:50rpx auto}
+.click-box{width:400rpx;margin:0 auto 50rpx}

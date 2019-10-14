@@ -1,0 +1,85 @@
+<swiper class='bt15 banner' indicator-dots="true" indicator-color="rgba(112,112,112,0.5)" indicator-active-color="#FFA000" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{activedetail.picsimages}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="ban"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='paddLR red1 font36 padd30 bt15 LH16'>{{activedetail.title}}</view>
+<!-- 详情条例 -->
+<view class='hddeta-list clearfix LH16 paddLR bt15'>
+  <view class='dd flex-le bt1'>
+    <view class='w1 h66'>地址</view>
+    <view class='w2 flex1'>{{activedetail.area}}</view>
+  </view>
+  <view class='dd flex-le bt1'>
+    <view class='w1 h66'>费用</view>
+    <view class='w2 flex1'>
+      <view>成人票：拼房
+        <text class='red1'>￥{{activedetail.ahprice}}</text>
+        <text class='line h99'>|</text> 不拼房
+        <text class='red1'>￥{{activedetail.anhprice}}</text>
+      </view>
+      <view>儿童票：有床
+        <text class='red1'>￥{{activedetail.cbedprice}}</text>
+        <text class='line h99'>|</text> 无床
+        <text class='red1'>￥{{activedetail.cnbedprice}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='dd flex-le bt1'>
+    <view class='w1 h66'>保险</view>
+    <view class='w2 flex1'>{{activedetail.Insurance}}</view>
+  </view>
+
+  <view class='dd flex-le '>
+    <view class='w1 h66'>报名</view>
+    <view class='w2 flex1 flex-bect'>
+      <view>{{activedetail.alreadynum}}人/限{{activedetail.limitnum}}人</view>
+      <view class='flex-lect ico-wx' bindtap='pupShow'>
+        <image class='ico40 mri10' src='../img/ico-wx.png'></image>
+        <text>扫码进群</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 详情说明 -->
+<view class='hddeta-tabShow bt15'>
+  <view class='hddeta-tab flex-bect h66 tc paddLR bt1'>
+    <view class='dd {{radioOn==index?"on":""}}' bindtap='radio' wx:for="{{radioList}}" wx:key="" data-index='{{index}}'>{{item}}</view>
+  </view>
+  <view class='hddeta-show flex-bect paddLR padd30 bt1 LH18'>
+    <view wx:if='{{radioOn==index}}' class='dd' wx:for="{{radioListShow}}" wx:key="">{{item}}</view>
+  </view>
+</view>
+
+<!-- 报名人数 -->
+<view class='hddeta-list clearfix LH16 paddLR'>
+  <view class='dd flex-le bt1'>已报名（{{activedetail.alreadynum}}）</view>
+  <block wx:for="{{areadyList}}" wx:key='*this' wx:if="{{areadyList.length!=0}}">
+    <view class='dd flex-bect bt1'>
+      <view class=''>{{item.nickname}}</view>
+      <view class='h99'>{{item.createtime}}</view>
+    </view>
+  </block>
+</view>
+
+ <form bindsubmit="formSubmit"  report-submit='true'>
+
+<button class='submit font36' wx:if="{{btnstatus==1}}"  formType="submit" data-activeid='{{activedetail.id}}' bindtap='enroll'>添加报名</button>
+<button class='submit font36' wx:if="{{btnstatus==2}}" formType="submit" data-activeid='{{activedetail.id}}' bindtap='enroll'>我要报名</button>
+<button class='submit font36' style='background:#ccc' formType="submit" wx:if="{{btnstatus==3}}" bindtap='nostartedtip'>活动未开始</button>
+<button class='submit font36' style='background:#ccc' formType="submit" wx:if="{{btnstatus==4}}" bindtap='finishtip'>活动已结束</button>
+
+</form>
+<view class='pup' wx:if="{{pupShow}}" id='wx_pup'>
+  <view class='rd8 pup-box bgff tc'>
+    <image class='ico30 ico-close' src='../img/ico-close.png' bindtap='pupClose'></image>
+    <view class='font36'>郊游活动群</view>
+    <image src='{{activedetail.qrcodeimage}}' data-imgurl='{{activedetail.qrcodeimage}}' bindtap='previewImage' class='wx-img'></image>
+    <view class='h66'>长按识别二维码可加入本次活动群聊</view>
+  </view>
+  <view class='pup-bg' bindtap='pupClose'></view>
+</view>

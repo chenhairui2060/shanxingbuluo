@@ -1,0 +1,31 @@
+<!-- 详情说明 -->
+<view class='hddeta-tab flex-bect h66 tc paddLR bt15'>
+  <view class='dd {{radioOn==index?"on":""}}' bindtap='radio' wx:for="{{radioList}}" wx:key="" data-index='{{index}}'>{{item}}</view>
+</view>
+
+<!-- 项目列表 -->
+<view class='img-list clearfix LH16' wx:if="{{activitylist.length!=0}}">
+  <block wx:for="{{activitylist}}" wx:key="*this">
+    <view class='dd bt15'>
+      <view class='flex-bect type paddLR'>
+        <text>积分商城</text>
+        <text class='red1'>{{item.status==1?"兑换中":"已完成"}}</text>
+      </view>
+      <view class='flex-bect bt1 li paddLR'>
+        <image class='mri20 img1' src='{{item.thumbimage}}'></image>
+        <view class='mlW flex1'>
+          <view class='np font30'>{{item.title}}</view>
+          <view class='h66 LH18'>配送方式：{{item.type==1?"自提":"顺带"}}
+            <view class='red2'>{{item.integral}}积分</view>
+          </view>
+        </view>
+      </view>
+      <view class='flex-rict paddLR' wx:if="{{item.status==1}}">
+        <view class='btn rd8 flex-ct' data-idx='{{index}}' data-dhid='{{item.id}}' bindtap='yesgoods'>确认收货</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='img-list clearfix LH16 no-tip' wx:else>
+  暂无此类订单
+</view>

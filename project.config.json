@@ -1,0 +1,149 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.4",
+	"appid": "wx48b4952fc1c4cf1b",
+	"projectname": "0503%E5%B1%B1%E8%A1%8C%E9%83%A8%E8%90%BD",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "小导航主页",
+					"pathName": "pages/navIndex/navIndex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "活动详情",
+					"pathName": "pages/hddeta/hddeta",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "我要报名",
+					"pathName": "pages/baom/baom",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "确认订单",
+					"pathName": "pages/comOrder/comOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "资料列表",
+					"pathName": "pages/fileList/fileList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "修改资料",
+					"pathName": "pages/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "积分商城",
+					"pathName": "pages/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "商品详情",
+					"pathName": "pages/shopdeta/shopdeta",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "我的订单",
+					"pathName": "pages/myOrder/myOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "报名信息",
+					"pathName": "pages/baomxinx/baomxinx",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "我的积分",
+					"pathName": "pages/myjf/myjf",
+					"query": "  ",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "积分兑换",
+					"pathName": "pages/myDuih/myDuih",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "关于我们",
+					"pathName": "pages/about/about",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,44 @@
+<view class='topLine'></view>
+<view class='bgff'>
+  <view class='paddLR padd30 bt15 com-top LH16'>
+    <view class='font30'>{{orderData.title}}</view>
+    <view class='h66 np'>
+      <view>活动时间：{{orderData.starttime}}-{{orderData.endtime}}</view>
+      <view>活动地址：{{orderData.area}}</view>
+    </view>
+  </view>
+
+  <view class='H100 paddLR flex-hct bt1'>报名成员（{{orderData.num}}）</view>
+  <view class='bt1 zonghe-list paddLR padd30'>
+    <view class='li flex-bect' wx:if="{{orderData.cbedpricenum!=0}}">
+      <view class='w1'>儿童票-有床</view>
+      <view class='w2 tr'>x{{orderData.cbedpricenum}}</view>
+      <view class='w3 tr'>￥{{orderData.cbedprice}}</view>
+    </view>
+    <view class='li flex-bect' wx:if="{{orderData.cnbedpricenum!=0}}">
+      <view class='w1'>儿童票-无床</view>
+      <view class='w2 tr'>x{{orderData.cnbedpricenum}}</view>
+      <view class='w3 tr'>￥{{orderData.cnbedprice}}</view>
+    </view>
+    <view class='li flex-bect' wx:if="{{orderData.ahpricenum!=0}}">
+      <view class='w1'>成人票-拼房</view>
+      <view class='w2 tr'>x{{orderData.ahpricenum}}</view>
+      <view class='w3 tr'>￥{{orderData.ahprice}}</view>
+    </view>
+    <view class='li flex-bect' wx:if="{{orderData.anhpricenum!=0}}">
+      <view class='w1'>成人票-不拼房</view>
+      <view class='w2 tr'>x{{orderData.anhpricenum}}</view>
+      <view class='w3 tr'>￥{{orderData.anhprice}}</view>
+    </view>
+  </view>
+  <view class='H100 paddLR flex-bect bt15'><text>合计</text> <text class='red2'>￥{{orderData.money}}</text></view>
+  <view class='H100 paddLR flex-bect bt15'><text>保险</text> <text>{{orderData.Insurance}}</text></view>
+  <view class='H100 paddLR flex-bect bt15'><text>本次积分</text> <text>{{orderData.integral}}积分</text></view>
+</view>
+
+<view class='haveFt {{isIpx?"haveH":""}}'></view>
+<view class='bt-fixed bgff flex-bect {{isIpx?"haveH":""}}'>
+  <view>共{{orderData.num}}人，合计:<text class='red2'>￥</text><text class='red2 font32'>{{orderData.money}}</text></view>
+  <view class='font36 bg1 flex-ct H100 btn' bindtap='{{!buttonClicked?"yesorder":""}}'>确认支付</view>
+</view>
+

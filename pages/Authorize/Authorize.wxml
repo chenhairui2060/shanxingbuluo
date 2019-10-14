@@ -1,0 +1,7 @@
+<!-- 授权 -->
+<view id='login'>
+  <!-- 001+{{_options}}+002 -->
+  <image src='img/logo.png' class='logo re'></image>
+  <button class='btn_return bg1 rd10 font34' open-type="getUserInfo" data-id='1' bindgetuserinfo='bindGetUserInfo'>微信登录</button>
+  <text class='bk login-p tc h96'>登录表示同意微信授权</text>
+</view>

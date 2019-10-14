@@ -1,0 +1,5 @@
+/* 授权 */
+#login .logo{width:180rpx;height:180rpx;display:block;margin:125rpx auto 175rpx;}
+
+#login .btn_return{background-color:transparent;width:670rpx;height:88rpx;display:block;margin:200rpx auto 30rpx;line-height:75rpx}
+.login-p{position:absolute;left:0;bottom:6.3%;width:100%}
